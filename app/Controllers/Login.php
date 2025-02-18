@@ -13,42 +13,31 @@ class Login extends BaseController
         echo view('templates/footer');
         return '';
     }
-        // Login Form
-    public function index() {
-        // Check if the user is already logged in
-        if ($this->session->userdata('user_id')) {
-            redirect('home'); // Redirect to home if already logged in
-        }
-        
-        $this->load->view('login');
-    }
 
-    // Handle Login Action
-    public function do_login() {
-        // Get the posted email and password
-        $email = $this->input->post('email');
-        $password = $this->input->post('password');
+    public function do_login()
+    {
+        $session = session();
+        $UserModel = new UserModel();
 
-        // Call a model function to validate the credentials
-        $user = $this->User_model->validate_user($email, $password);
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
 
-        if ($user) {
-            // Set session data to track login status
-            $this->session->set_userdata('user_id', $user->id);
-            redirect('home'); // Redirect to home page after successful login
+        $result = $UserModel->where('email', $email)->first();
+
+        if ($result !== null) {
+            if (isset($result['id']) && password_verify($password, $result['password'])) {
+                
+                $session->set("user_id", $result['id']);
+                return redirect()->to(base_url("add"));
+            } else {
+                
+                $session->setFlashdata('error', 'Invalid email or password.');
+                return redirect()->back();
+            }
         } else {
-            // Handle login failure
-            $this->session->set_flashdata('error', 'Invalid email or password.');
-            redirect('login');
+            
+            $session->setFlashdata('error', 'Invalid email or password.');
+            return redirect()->back();
         }
     }
-
-    // Logout User
-    public function logout() {
-        // Destroy session data to log the user out
-        $this->session->sess_destroy();
-        redirect('login'); // Redirect to login page after logout
-    }
- }
-
 }
