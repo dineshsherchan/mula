@@ -5,124 +5,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= base_url('/css/style.css') ?>">
-    <title>YOur wish as our wish. Feel free to use or products.</title>
+    <title>Your wish as our wish. Feel free to use our products.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <body>
 
-<section id="header">
-    <label class ="logo"> <a href = "<?= base_url() ?>">MeloRents</a></label>
-	
-
-    <div>
-        <ul id = "navbar">
-            <li><a class = highlight href = "<?= base_url() ?>">Home</a></li>
-            <li><a href = "<?= base_url('Mobile') ?>">Mobile</a></li>
-            <li><a href = "<?= base_url('registration') ?>">registration</a></li>
-            <li><a href = "<?= base_url('login') ?>">login</a></li>
-            <li><a href = "<?= base_url('Laptop') ?>">Laptoo </a></li>
-			<li><a href = "<?= site_url('logout') ?>">Logout</a></li>
-		    <li><a href = "<?= site_url('Gagdets') ?>">Gadgets</a></li>
-            
-        </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container">
+        <a class="navbar-brand text-primary" href="<?= base_url() ?>">Yours E-Commerce</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="<?= base_url() ?>">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('mobile') ?>">Mobile</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('registration') ?>">Registration</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('login') ?>">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= base_url('laptop') ?>">Gadgets</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?= site_url('contactus') ?>">Contact</a></li>
+            </ul>
+        </div>
     </div>
-</section>
+</nav>
 
 <style>
-
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 75px;
-    background-color: rgb(165, 188, 202);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.logo {
-    color: blue;
-    text-shadow: 0 0 10px blue;
-    font-size: 25px;
-    padding-right: 400px;
+.navbar-nav .nav-item {
+    margin-right: 15px;
 }
 
-#navbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.navbar-nav .nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-#navbar li {
-    list-style: none;
-    padding: 0 20px;
-}
-
-#navbar li a {
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 550;
-    color: #1a1a1a;
-    transition: 0.3s ease;
-}
-
-#navbar li a:hover {
+.navbar-nav .nav-link:hover {
     color: #a94752;
 }
 
-#navbar li a.highlight {
-    color: #088178;
-} 
-
-#navbar li a.highlight:after {
-    content: "";
-    width: 30%;
-    height: 20%;
-}
-
 @media (max-width: 768px) {
-    #header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px 20px;
-    }
-
-    .logo {
-        padding-right: 0;
-        margin-bottom: 10px;
-    }
-
-    #navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
-    #navbar li {
-        padding: 10px 0;
-    }
-
-    #navbar li a {
-        font-size: 18px;
+    .navbar-nav {
+        text-align: center;
     }
 }
-
-@media (max-width: 480px) {
-    #header {
-        padding: 10px 15px;
-    }
-
-    .logo {
-        font-size: 20px;
-    }
-
-    #navbar li a {
-        font-size: 16px;
-    }
-}
-
 </style>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

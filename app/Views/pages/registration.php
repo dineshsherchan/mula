@@ -1,7 +1,18 @@
+<div class="container">
+    <h2>Create a New Account</h2>
+	
+    <!-- Status message -->
+    <?php  
+        if(!empty($success_msg)){ 
+            echo '<p class="status-msg success">'.$success_msg.'</p>'; 
+        }elseif(!empty($error_msg)){ 
+            echo '<p class="status-msg error">'.$error_msg.'</p>'; 
+        } 
+    ?>
 <body>
 <div class="card">
     <div class="card-body">
-        <form id="myForm" method="post" action="<?= site_url("registration/do_register") ?>">
+        <form id="myForm" method="post" action="<?= site_url('registration/do_register') ?>">
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
                 <input name="name" type="text" class="form-control" id="name" placeholder="Name">
@@ -33,6 +44,7 @@
                 <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </form>
+        <p>Already have an account? <a href="<?php echo base_url('login'); ?>">Login here</a></p>
     </div>
 </div>
 </body>

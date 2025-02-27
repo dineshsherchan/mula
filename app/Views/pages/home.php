@@ -80,14 +80,6 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="<?= base_url('Mobile') ?>">Mobile</a>
-        <a href="<?= base_url('Laptop') ?>">Laptop</a>
-        <a href="<?= base_url('Gadgets') ?>">Gadgets</a>
-        <a href="<?= base_url('About') ?>">About</a>
-        <a href="<?= base_url('contact') ?>">Contact</a>
-    </nav>
-
     <div class="hero">
         <h1>Your wish our wish.</h1>
         <p>Buy our products with ease.</p>
@@ -95,27 +87,25 @@
 
     <section class="container">
         <div class="product">
-            <img src="<?= base_url('images/iphone16pro.png') ?>" alt="Iphone 16pro ">
-            <h3>Guitar</h3>
-            <p>$200 - Buy</p>
-            <button>Buy Now</button>
+            <img src="<?= base_url('images/iphone16pro.png') ?>" alt="Iphone 16Pro">
+            <h3>Iphone 16Pro</h3>
+            <button class="btn btn-primary">Go</button>
+           
             
         </div>
 
         <div class="product">
-            <img src="<?= base_url('images/macbookairpro.png') ?>" alt="Macbook AIrPro">
-            <h3>Electric Guitar</h3>
-            <p>$400 - Buy</p>
-            <button>Buy Now</button>
+            <img src="<?= base_url('images/macbookairpro.png') ?>" alt="Macbook AirPro">
+            <h3>Macbook Air Pro</h3>
+            <button class="btn btn-primary">Go Now</button>
+    </div>
             
-        </div>
-
         <div class="product">
             <img src="<?= base_url('images/ipad.png') ?>" alt="Ipad">
-            <h3>Drums</h3>
-            <p>$600 - Buy</p>
-            <button>Buy Now</button>
+            <h3>IPad</h3>
+            <button class="btn btn-primary">GO Now</button>
             
-        </div>
+            
+        
     </section>
 </body>

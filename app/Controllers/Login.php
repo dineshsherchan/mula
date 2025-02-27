@@ -22,22 +22,26 @@ class Login extends BaseController
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
-        $result = $UserModel->where('email', $email)->first();
+        // Attempt to retrieve user from the database
+        $result = $UserModel->getUsers($email);
 
-        if ($result !== null) {
-            if (isset($result['id']) && password_verify($password, $result['password'])) {
+        // Check if the result is valid and contains the necessary fields
+        if ($result) {
+            // Check if the email exists and if the password is correct
+            if (isset($result['email']) && password_verify($password, $result['password'])) {
                 
+                // Set session data and redirect to the homepage
                 $session->set("user_id", $result['id']);
-                return redirect()->to(base_url("add"));
+                return redirect()->to(base_url());
             } else {
-                
+                // Password doesn't match or invalid credentials
                 $session->setFlashdata('error', 'Invalid email or password.');
-                return redirect()->back();
+                return redirect()->route('login');
             }
         } else {
-            
+            // User not found
             $session->setFlashdata('error', 'Invalid email or password.');
-            return redirect()->back();
+            return redirect()->route('login');
         }
     }
 }

@@ -48,4 +48,12 @@ class UserModel extends Model
     protected $afterFind = [];
     protected $beforeDelete = [];
     protected $afterDelete = [];
+    
+   public function getUsers($email = null)
+   {
+       if ($email === null) {
+           return $this->findAll();
+       }
+       return $this->where(['email' => $email])->first();
+   }
 }

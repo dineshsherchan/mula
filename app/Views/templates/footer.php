@@ -2,17 +2,17 @@
     <div class="footer-container">
         <div class="footer-column">
             <h4>Contact Us</h4>
-            <p>Phone: <a href="tel:07453276039">07453276039</a></p>
-            <p>Address: <a href="https://www.google.com/maps/place/105+Newhampton+Road,+Wolverhampton,+WV6+0RU" target="_blank">105 Newhampton Road, Wolverhampton, WV6 0RU</a></p>
+            <p>Phone: <a href="tel:07454220063">07454220063</a></p>
+            <p>Address: <a href="https://www.google.com/maps/place/98+Evans+St,+Wolverhampton+WV6+0QF/@52.5951686,-2.1391109,17z/data=!3m1!4b1!4m6!3m5!1s0x48709b81aafff5cb:0x839d0ca80c1d91a1!8m2!3d52.5951686!4d-2.1391109!16s%2Fg%2F11tf32gm4g?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">98, Evans Street, WV6OQF></p>
             <p>Hours: 9:00-17:00 Monday to Friday</p>
         </div>
         <div class="footer-column">
             <h4>About the Company</h4>
-            <p>Whether you are a budding musician, a seasoned performer, or simply exploring a new hobby, we provide a wide range of high-quality instruments to meet your needs.</p>
+            <p>E commerce helps us get things we need without going to a store.</p>
         </div>
     </div>
     <div class="footer-bottom">
-        <p>&copy; 2024 Meloinstruments. All rights reserved.</p>
+        
     </div>
 	
 	<style>

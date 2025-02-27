@@ -18,7 +18,7 @@
 </li>
 <li>
 <i class ="fas fa-phone-alt"></i>
-<p>98 Evans Street, WV6 0QF</p>
+<p>+44 7454220063</p>
 </li>
 <li>
 <i class ="far fa-clock"></i>
@@ -33,7 +33,7 @@
 
 <div class="contactform">
     <div class="contactform-body">
-        <form id="myForm" method="post" action="<?= site_url("contactus/do_contact") ?>">
+        <form id="myForm" method="post" action="<?= site_url() ?>">
 		<p>Fill in the forms to stay with us </p>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>
@@ -63,7 +63,7 @@
 
 
 
-<p> Alternatively <a href = "<?= base_url('terms_conditions') ?>">Click here </a> To read our Terms and Conditons. </p>
+<p> Alternatively <a href = "<?= base_url('terms') ?>">Click here </a> To read our Terms and Conditons. </p>
 
 <style>
 .section-p2 {
