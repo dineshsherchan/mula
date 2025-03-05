@@ -33,7 +33,7 @@
 
 <div class="contactform">
     <div class="contactform-body">
-        <form id="myForm" method="post" action="<?= site_url() ?>">
+        <form id="myForm" method="post" action="<?= site_url('contactus/do_contact') ?>">
 		<p>Fill in the forms to stay with us </p>
             <div class="mb-3">
                 <label for="name" class="form-label">Name</label>

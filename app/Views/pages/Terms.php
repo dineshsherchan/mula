@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Terms and Conditions</title>
+
+<title>Terms and Conditions</title>
     <style>
         * {
             margin: 0;
@@ -35,6 +30,7 @@
             font-size: 28px;
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
         }
 
         h2 {
@@ -50,6 +46,15 @@
             font-size: 16px;
         }
 
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         ul {
             list-style-type: none;
             margin: 10px 0;
@@ -60,7 +65,25 @@
             margin-bottom: 10px;
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 1024px) {
+            .container {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            p {
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
             .container {
                 padding: 15px;
             }
@@ -70,15 +93,44 @@
             }
 
             h2 {
-                font-size: 20px;
+                font-size: 18px;
             }
 
             p {
                 font-size: 14px;
             }
+
+            ul {
+                padding-left: 15px;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            h2 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 13px;
+            }
+
+            ul {
+                padding-left: 10px;
+            }
         }
     </style>
-</head>
 <body>
     <div class="container" role="main">
         <h1>Terms and Conditions</h1>
@@ -120,4 +172,4 @@
         </section>
     </div>
 </body>
-</html>
+

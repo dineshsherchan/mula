@@ -1,7 +1,7 @@
 <?php
 
 use CodeIgniter\Router\RouteCollection;
-use App\Controllers\News;
+use App\Controllers\User;
 use App\Controllers\Pages;
 use App\Controllers\Gadgets;
 use App\Controllers\Ajax;
@@ -12,8 +12,7 @@ use App\Controllers\Laptop;
 use App\Controllers\Mobile;
 use App\Controllers\Terms;
 use App\Controllers\Map;
-use App\Controllers\Logout;
-use App\Controllers\Api;
+use App\Controllers\Apis;
 
 
 $routes->get('/', 'Home::index');
@@ -47,32 +46,23 @@ $routes->get('geolocation', [Map::class, 'index']);
 $routes->get('terms', [Terms::class, 'index']);
 
 //Api Routes
-$routes->get('gif', [Api::class, 'index']); 
-$routes->post('gif/search', [Api::class, 'search']); 
+$routes->get('gif', [Apis::class, 'index']);
+$routes->post('gif/search', [Apis::class, 'search']); 
 
 // Ajax routes
 $routes->get('ajaxnews', [Ajax::class, 'index']);
 $routes->get('ajaxnews/(:segment)', [Ajax::class, 'index']);
 $routes->post('ajaxnews', [Ajax::class, 'index']);
 
+// News Routes
+$routes->get('news', [User::class, 'index']); 
+$routes->get('news/new', [User::class, 'new']); 
+$routes->post('news', [User::class, 'create']); 
+$routes->get('news/(:segment)', [User::class, 'show']); 
+
 // Pages Routes
 $routes->get('pages', [Pages::class, 'index']);
-$routes->get('(:segment', [Pages::class, 'view']);
-
-//Api Routes
-$routes->get('apis', [Apis::class, 'wikipedia']);
-
-
-//Logout route
-$routes->get('logout', 'Logout::index');
 $routes->get('(:segment)', [Pages::class, 'view']);
-
-// News Routes
-$routes->get('news', [News::class, 'index']); 
-$routes->get('news/new', [News::class, 'new']); 
-$routes->post('news', [News::class, 'create']); 
-$routes->get('news/(:segment)', [News::class, 'show']);
-
 
 
 

@@ -5,7 +5,7 @@
     <div class="container">
         <h1>Search any Brand</h1>
 
-        <form class="row g-3 align-items-end" action="<?= site_url("gif/search") ?>" method="post">
+        <form class="row g-3 align-items-end" action="<?= site_url('gif/search') ?>" method="post">
             <?= csrf_field() ?>
             <div class="col-md-10 mb-3">
                 <label for="searchWords" class="form-label">Search</label>

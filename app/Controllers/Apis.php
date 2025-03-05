@@ -2,12 +2,12 @@
 
 namespace App\Controllers;
 
-class Api extends BaseController
+class Apis extends BaseController
 {
     public function index(): string
     {
 		echo view('templates/header');
-                echo view('pages/gif');
+        echo view('pages/gif');
 		echo view('templates/footer');
 		return '';
     }
@@ -20,7 +20,7 @@ class Api extends BaseController
 
         // Set up the URL for the API request
         $url = "https://api.giphy.com/v1/gifs/search?"
-            . "api_key=dAJCSi1gMVjmqbWKy8UqcpS23oGxSPjX"
+            . "api_key=dAJCSi1gMVjmqbWKy8UqcpS23oGxSPjX&"
             . "q=" . $keyword
             . "&limit=50&"
             . "lang=en";
