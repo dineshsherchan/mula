@@ -13,6 +13,8 @@ use App\Controllers\Mobile;
 use App\Controllers\Terms;
 use App\Controllers\Map;
 use App\Controllers\Apis;
+use App\Controllers\Article;
+use App\Controllers\News;
 
 
 $routes->get('/', 'Home::index');
@@ -39,6 +41,9 @@ $routes->get('mobile', [Mobile::class, 'index']);
 //Gadgets routes
 $routes->get('gadgets', [Gadgets::class, 'index']); 
 
+//Users routes
+$routes->get('article', [Article::class, 'index']);
+
 //Map routes
 $routes->get('geolocation', [Map::class, 'index']); 
 
@@ -54,11 +59,13 @@ $routes->get('ajaxnews', [Ajax::class, 'index']);
 $routes->get('ajaxnews/(:segment)', [Ajax::class, 'index']);
 $routes->post('ajaxnews', [Ajax::class, 'index']);
 
+
 // News Routes
-$routes->get('news', [User::class, 'index']); 
-$routes->get('news/new', [User::class, 'new']); 
-$routes->post('news', [User::class, 'create']); 
-$routes->get('news/(:segment)', [User::class, 'show']); 
+$routes->get('news', [News::class, 'index']); 
+$routes->get('news/new', [News::class, 'new']); 
+$routes->post('news', [News::class, 'create']); 
+$routes->post('news/new', [News::class, 'create']);
+$routes->get('news/(:segment)', [News::class, 'show']); 
 
 // Pages Routes
 $routes->get('pages', [Pages::class, 'index']);

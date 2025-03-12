@@ -1,68 +1,142 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <style>
+
+<style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
+
         body {
-            background-color: #f5f5f5;
+            background-color: #f4f7f6;
             text-align: center;
-            padding: 20px;
+            padding: 40px 20px;
+            font-size: 16px;
         }
+
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease-in-out;
         }
+
+        .container:hover {
+            transform: scale(1.02);  /* Subtle scaling effect on hover */
+        }
+
         h1, h2 {
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 2.2em;
         }
+
         p {
             color: #666;
-            line-height: 1.6;
-            margin-bottom: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-size: 1em;
         }
-        link {
-            margin-top: 20px;
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 20px;
         }
+
+        li {
+            color: #555;
+            font-size: 1em;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+        }
+
+        li:hover {
+            background-color: #f2f2f2;  /* Highlight list item on hover */
+            padding-left: 10px;  /* Slight indentation for hover effect */
+        }
+
+        .link {
+            margin-top: 30px;
+            font-size: 1.1em;
+        }
+
         .link a {
             color: #ff5733;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
         }
+
         .link a:hover {
+            color: #d94f2d;
             text-decoration: underline;
         }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 30px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            p {
+                font-size: 1.1em;
+            }
+            .link a {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px;
+            }
+            .container {
+                width: 100%;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            p {
+                font-size: 1em;
+            }
+            .link a {
+                font-size: 1.1em;
+            }
+        }
     </style>
-</head>
+
 <body>
     <div class="container">
         <h1>About Us</h1>
-        <p>Welcome to our e-commerce store! We are committed to providing the best quality products at the most affordable prices.</p>
-        <p>Our mission is to make online shopping easy, secure, and enjoyable for everyone.</p>
-        <p>We strive to offer a wide range of products to meet the needs of our diverse customer base.</p>
-        <p>Thank you for choosing us for your shopping needs!</p>
+    <ul>
+        <li>Welcome to our e-commerce store! We are committed to providing the best quality products at the most affordable prices.</li>
+        <li>Our mission is to make online shopping easy, secure, and enjoyable for everyone.</li>
+        <li>We strive to offer a wide range of products to meet the needs of our diverse customer base.</li>
+        <li>Thank you for choosing us for your shopping needs!</li>
+    </ul>
         
         <h2>Terms and Conditions</h2>
-        <p>By using our website, you agree to comply with our terms and conditions.</p>
-        <p>All purchases made on our platform are subject to availability and pricing at the time of the transaction.</p>
-        <p>We reserve the right to update our terms at any time without prior notice.</p>
-        <p>Your personal data is handled with the utmost care and in compliance with privacy laws.</p>
-        <p>If you have any questions regarding our terms, feel free to contact our support team.</p>
-    </div>
-    <div class="link">
-           <li><a href = "<?= base_url('Terms_conditions') ?>">Read our Full Terms and Conditions</a></li>
+        
+        <ul>
+            <li>By using our website, you agree to comply with our terms and conditions.</li>
+            <li>All purchases made on our platform are subject to availability and pricing at the time of the transaction.</li>
+            <li>We reserve the right to update our terms at any time without prior notice.</li>
+            <li>Your personal data is handled with the utmost care and in compliance with privacy laws.</li>
+            <li>If you have any questions regarding our terms, feel free to contact our support team.</li>
+        </ul>
+    
+        <div class="link">
+            <a href="<?= base_url('Terms') ?>">Read our Full Terms and Conditions</a>
+        </div>
     </div>
 </body>
-</html>
+

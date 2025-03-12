@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 
-class User extends BaseController
+class News extends BaseController
 {
     public function index()
     {
@@ -44,8 +44,9 @@ class User extends BaseController
 
         // Checks whether the submitted data passed the validation rules.
         if (! $this->validateData($data, [
-            'title' => 'required|max_length[255]|min_length[3]',
-            'body'  => 'required|max_length[5000]|min_length[10]',
+            'name' => 'required|max_length[255]|min_length[3]',
+            'email'  => 'required|max_length[5000]|min_length[3]',
+            'password'  => 'required|max_length[5000]|min_length[3]',
         ])) {
             // The validation fails, so returns the form.
             return $this->new();
@@ -55,10 +56,12 @@ class User extends BaseController
 
          $model = model(UserModel::class);
  
-         $model->save([
-             'title' => $post['title'],
-             'slug'  => url_title($post['title'], '-', true),
-             'body'  => $post['body'],
+
+         $Usermodel->save([
+            'name' => $post['name'],
+            'email'  => url_title($post['email'], '-', true),
+            'password'  => $post['password'], 
+            
          ]);
     }
     public function new()

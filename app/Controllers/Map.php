@@ -6,6 +6,9 @@ class Map extends BaseController
 {
     public function index(): string
     {
-        return view('map/geolocation');
+		echo view('templates/header');
+        echo view('map/geolocation');
+		echo view('templates/footer');
+		return '';
     }
 }

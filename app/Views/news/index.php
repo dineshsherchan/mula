@@ -3,14 +3,14 @@
 	function getData(slug) {
 		
 		// Fetch data
-		fetch('https://mi-linux.wlv.ac.uk/~2125093/bhai/public/ajaxnews/get/' + slug)
+		fetch('https://mi-linux.wlv.ac.uk/~2125093/bhai/public/ajaxnews/' + slug)
 			
 		  // Convert response string to json object
 		  .then(response => response.json())
 		  .then(response => {
 
 			// Copy one element of response to our HTML paragraph
-			document.getElementById("ajax").innerHTML = response.title + ": " + response.text;
+			document.getElementById("ajax").innerHTML = response.name + ": " + response.email;
 		  })
 		  .catch(err => {
 			
@@ -19,7 +19,6 @@
 		});
 	}
 </script>
-<p><button onclick="getData('<?= esc($users_item['slug'], 'url') ?>')">View article via Ajax</button></p>
 
 <h2><?= esc($title) ?></h2>
 
@@ -27,12 +26,14 @@
 
     <?php foreach ($users_list as $users_item): ?>
 
-        <h3><?= esc($users_item['title']) ?></h3>
+        <h3><?= esc($users_item['name']) ?></h3>
 
         <div class="main">
-            <?= esc($users_item['body']) ?>
+            <?= esc($users_item['email']) ?>
+            <?= esc($users_item['password']) ?>
         </div>
-        <p><a href="/users/<?= esc($users_item['slug'], 'url') ?>">View article</a></p>
+        <p><a href="/users<?= esc($users_item['name'], 'url') ?>">View article</a></p>
+        <p><button onclick="getData('<?= esc($users_item['name'], 'url') ?>')">View article</button></p>
 
     <?php endforeach ?>
 

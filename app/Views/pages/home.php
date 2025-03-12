@@ -78,7 +78,7 @@
             background-color: #218838;
         }
     </style>
-</head>
+
 <body>
     <div class="hero">
         <h1>Your wish our wish.</h1>
@@ -90,6 +90,7 @@
             <img src="<?= base_url('images/iphone16pro.png') ?>" alt="Iphone 16Pro">
             <h3>Iphone 16Pro</h3>
             <button class="btn btn-primary">Go</button>
+            
            
             
         </div>

@@ -54,6 +54,6 @@ class UserModel extends Model
        if ($email === null) {
            return $this->findAll();
        }
-       return $this->where(['email' => $email])->first();
+       return $this->where(['name' => $email])->first();
    }
 }

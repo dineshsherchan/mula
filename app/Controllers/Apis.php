@@ -32,6 +32,10 @@ class Apis extends BaseController
         $obj = json_decode($json);
 
         // Pass the data to the view for rendering
-        return view('pages/gif', ['obj' => $obj]);
+        
+
+        return view('templates/header')
+             .view('pages/gif', ['obj' => $obj])
+            . view('templates/footer');
     }
 }
