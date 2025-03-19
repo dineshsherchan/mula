@@ -1,1 +1,1 @@
-<p>Items created successfully.</p>
+<p>User register successfully.</p>

@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 
-class News extends BaseController
+class News extends BaseController 
 {
     public function index()
     {
@@ -40,13 +40,19 @@ class News extends BaseController
     {
         helper('form');
 
-        $data = $this->request->getPost(['title', 'body']);
+      
+            $userData = array( 
+                'name' => strip_tags($this->request->getPost('name')), 
+                'email' => strip_tags($this->request->getPost('email')), 
+                'password' => md5($this->request->getPost('password')), 
+            ); 
+            
 
         // Checks whether the submitted data passed the validation rules.
-        if (! $this->validateData($data, [
-            'name' => 'required|max_length[255]|min_length[3]',
-            'email'  => 'required|max_length[5000]|min_length[3]',
-            'password'  => 'required|max_length[5000]|min_length[3]',
+        if (! $this->validateData($userData, [
+            'name' => 'required|min_length[3]',
+            'email'  => 'required|min_length[3]',
+            'password'  => 'required|min_length[3]',
         ])) {
             // The validation fails, so returns the form.
             return $this->new();
@@ -55,14 +61,27 @@ class News extends BaseController
          $post = $this->validator->getValidated();
 
          $model = model(UserModel::class);
- 
+         
+        //validate form input
+        if ($post){
 
-         $Usermodel->save([
-            'name' => $post['name'],
-            'email'  => url_title($post['email'], '-', true),
-            'password'  => $post['password'], 
+            $model->save([
+                'name' => $userData['name'],
+                'email'  => $userData['email'],
+                'password'  => $userData['password'], 
+                
+            ]);
             
-         ]);
+            return view('templates/header', ['title' => 'successfully create'])
+            . view('news/success')
+            . view('templates/footer');
+        }else{
+
+            return view('templates/header', ['title' => 'Something went wrong'])
+            . view('news/create')
+            . view('templates/footer');
+        }
+
     }
     public function new()
     {
