@@ -60,9 +60,6 @@
 
 
 </section>
-
-
-
 <p> Alternatively <a href = "<?= base_url('terms') ?>">Click here </a> To read our Terms and Conditons. </p>
 
 <style>

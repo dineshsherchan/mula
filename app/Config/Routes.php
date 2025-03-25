@@ -15,7 +15,7 @@ use App\Controllers\Map;
 use App\Controllers\Apis;
 use App\Controllers\Article;
 use App\Controllers\News;
-
+use App\Controllers\UserController;
 
 $routes->get('/', 'Home::index');
 
@@ -43,6 +43,12 @@ $routes->get('gadgets', [Gadgets::class, 'index']);
 
 //Users routes
 $routes->get('article', [Article::class, 'index']);
+
+//search routes
+$routes->get('index', [UserController::class, 'index']);
+$routes->post('index/getUsers', [UserController::class, 'getUsers']);
+
+
 
 //Map routes
 $routes->get('geolocation', [Map::class, 'index']); 

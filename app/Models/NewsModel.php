@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 
 class NewsModel extends Model
 {
-   protected $table = 'users';
+   
    public function getNews($slug = false)
     {
         if ($slug === null) {
