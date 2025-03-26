@@ -13,9 +13,9 @@ use App\Controllers\Mobile;
 use App\Controllers\Terms;
 use App\Controllers\Map;
 use App\Controllers\Apis;
-use App\Controllers\Article;
 use App\Controllers\News;
-use App\Controllers\UserController;
+
+
 
 $routes->get('/', 'Home::index');
 
@@ -31,6 +31,8 @@ $routes->post('registration/do_register', [Register::class, 'do_register']);
 $routes->get('contactus', [Contact::class, 'index']);
 $routes->post('contactus/do_contact', [Contact::class, 'do_contact']);
 
+
+
 //Laptop routes
 $routes->get('laptop', [Laptop::class, 'index']); 
 
@@ -40,15 +42,6 @@ $routes->get('mobile', [Mobile::class, 'index']);
 
 //Gadgets routes
 $routes->get('gadgets', [Gadgets::class, 'index']); 
-
-//Users routes
-$routes->get('article', [Article::class, 'index']);
-
-//search routes
-$routes->get('index', [UserController::class, 'index']);
-$routes->post('index/getUsers', [UserController::class, 'getUsers']);
-
-
 
 //Map routes
 $routes->get('geolocation', [Map::class, 'index']); 

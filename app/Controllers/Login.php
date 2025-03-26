@@ -43,5 +43,6 @@ class Login extends BaseController
             $session->setFlashdata('error', 'Invalid email or password.');
             return redirect()->route('login');
         }
+
     }
 }

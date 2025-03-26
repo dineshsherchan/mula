@@ -1,2 +1,0 @@
-<p>iPhone, series of smartphones produced by Apple Inc., combining mobile telephone, digital camera, music player, and personal computing technologies. After more than two years of development, the device was first released in the United States in 2007.
-</p>

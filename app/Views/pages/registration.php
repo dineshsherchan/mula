@@ -1,14 +1,3 @@
-<div class="container">
-    <h2>Create a New Account</h2>
-	
-    <!-- Status message -->
-    <?php  
-        if(!empty($success_msg)){ 
-            echo '<p class="status-msg success">'.$success_msg.'</p>'; 
-        }elseif(!empty($error_msg)){ 
-            echo '<p class="status-msg error">'.$error_msg.'</p>'; 
-        } 
-    ?>
 <body>
 <div class="card">
     <div class="card-body">
@@ -48,3 +37,5 @@
     </div>
 </div>
 </body>
+
+

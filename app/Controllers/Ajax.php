@@ -2,14 +2,14 @@
 
 namespace App\Controllers;
 
-use App\Models\UserModel;
+use App\Models\NewsModel;
 
 class Ajax extends BaseController
 {
-	public function index($slug = False)
+	public function get($slug = null)
 	{
-		$model = model(UserModel::class);
-		$data = $model->getUsers($slug);
+		$model = model(NewsModel::class);
+		$data = $model->getNews($slug);
 
 		print(json_encode($data));
 	}
